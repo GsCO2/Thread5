@@ -24,8 +24,8 @@ public class ThreadPing extends Thread{
 			String avg;
 			while((linha = buffer.readLine()) != null) {
 				if(linha.contains("time")) {
-					temp = linha.split(" ")[6];
-					System.out.println("Ping do servidor " + nomeserv + " ==> " + temp + ".ms");
+					temp = linha.split("=")[3];
+					System.out.println("Ping do servidor " + nomeserv + " ==> " + temp);
 				} else if(linha.contains("avg")) {
 					avg = linha.split("/")[4];
 					System.out.println("Média do ping do servidor " + nomeserv + " ==> " + avg + ".ms");
