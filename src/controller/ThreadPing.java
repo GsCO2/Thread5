@@ -23,13 +23,13 @@ public class ThreadPing extends Thread{
 			String nomeserv = servidor.split("\\.")[1];
 			String avg;
 			while((linha = buffer.readLine()) != null) {
-				if(linha.contains("time")) {
+				if(linha.contains("from")) {
 					temp = linha.split("=")[3];
 					System.out.println("Ping do servidor " + nomeserv + " ==> " + temp);
-				} else if(linha.contains("avg")) {
+				} else if(linha.contains("rtt")) {
 					avg = linha.split("/")[4];
-					System.out.println("Média do ping do servidor " + nomeserv + " ==> " + avg + ".ms");
-				}
+					System.out.println("Média do ping do servidor " + nomeserv + " ==> " + avg + " ms");
+				}	
 			}
 			reader.close();
 			buffer.close();

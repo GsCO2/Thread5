@@ -15,7 +15,7 @@ public class Main {
 		servidores[2] = "www.google.com.br";
 		for(int i = 0; i < servidores.length; i++) {
 			ThreadPing thread = new ThreadPing(servidores[i]);
-			thread.run();
+			thread.start();
 		} 
 	}
 }
